@@ -317,9 +317,13 @@ def prepare_task_workspace(skill_dir: Path, run_id: str, task: Task, agent_id: s
         logger.warning("Could not find agent workspace, using fallback")
         workspace = Path(f"/tmp/pinchbench/{run_id}/{task.task_id}")
 
-    # Clear workspace before each task to prevent stale files from prior tasks
-    # from contaminating the agent's context.
+    # Back up existing workspace before clearing to prevent data loss.
     if workspace.exists():
+        backup_dir = Path(f"/tmp/pinchbench/backups/{run_id}")
+        backup_dir.mkdir(parents=True, exist_ok=True)
+        backup_path = backup_dir / f"workspace_{task.task_id}_{int(time.time())}"
+        shutil.copytree(workspace, backup_path)
+        logger.info("Backed up workspace to %s", backup_path)
         shutil.rmtree(workspace)
     workspace.mkdir(parents=True, exist_ok=True)
 
@@ -624,6 +628,7 @@ def execute_openclaw_task(
     timeout_multiplier: float,
     skill_dir: Path,
     verbose: bool = False,
+    skip_workspace_prep: bool = False,
 ) -> Dict[str, Any]:
     logger.info("🤖 Agent [%s] starting task: %s", agent_id, task.task_id)
     logger.info("   Task: %s", task.name)
@@ -638,7 +643,28 @@ def execute_openclaw_task(
     cleanup_agent_sessions(agent_id)
 
     start_time = time.time()
-    workspace = prepare_task_workspace(skill_dir, run_id, task, agent_id)
+    if skip_workspace_prep:
+        # Use existing agent workspace as-is (e.g. --agent mode)
+        workspace = _get_agent_workspace(agent_id)
+        if workspace is None:
+            workspace = Path(f"/tmp/pinchbench/{run_id}/{task.task_id}")
+            workspace.mkdir(parents=True, exist_ok=True)
+        logger.info("   Using existing workspace: %s", workspace)
+    else:
+        workspace = prepare_task_workspace(skill_dir, run_id, task, agent_id)
+
+    # Run optional pre-execution command (e.g. reset simulator state)
+    pre_exec_command = task.frontmatter.get("pre_exec_command")
+    if pre_exec_command:
+        logger.info("Running pre-exec command: %s", pre_exec_command[:200])
+        try:
+            subprocess.run(
+                pre_exec_command, shell=True, capture_output=True,
+                text=True, timeout=30, check=False, cwd=str(workspace),
+            )
+        except subprocess.TimeoutExpired:
+            logger.warning("Pre-exec command timed out")
+
     session_id = f"{task.task_id}_{int(time.time() * 1000)}"
     timeout_seconds = task.timeout_seconds * timeout_multiplier
     stdout = ""

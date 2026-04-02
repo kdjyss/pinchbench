@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC-Sim Skill Benchmark Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid #1e293b; margin-bottom: 30px; }
+header h1 { font-size: 2.2em; color: #f1f5f9; margin-bottom: 8px; }
+header p { color: #94a3b8; font-size: 0.95em; }
+.meta { display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap; }
+.meta span { background: #1e293b; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; color: #94a3b8; }
+
+/* 总览卡片 */
+.overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 30px; }
+.card { background: #1e293b; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #334155; }
+.card .label { font-size: 0.8em; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+.card .value { font-size: 2.2em; font-weight: 700; margin: 6px 0; }
+.card .sub { font-size: 0.8em; color: #64748b; }
+.card.best .value { color: #22c55e; }
+.card.worst .value { color: #ef4444; }
+
+/* 图表区域 */
+.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+.chart-box { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; }
+.chart-box h3 { font-size: 1em; color: #cbd5e1; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+.chart-box.full { grid-column: 1 / -1; }
+canvas { max-height: 350px; }
+
+/* 表格 */
+.table-wrap { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; margin-bottom: 30px; overflow-x: auto; }
+.table-wrap h3 { font-size: 1em; color: #cbd5e1; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+th { background: #0f172a; color: #94a3b8; padding: 10px 12px; text-align: left; font-weight: 600; position: sticky; top: 0; }
+td { padding: 8px 12px; border-bottom: 1px solid #1e293b; }
+tr:hover td { background: #334155; }
+.score-cell { text-align: center; font-weight: 600; }
+.s100 { color: #22c55e; }
+.s90 { color: #4ade80; }
+.s80 { color: #a3e635; }
+.s70 { color: #facc15; }
+.s60 { color: #fb923c; }
+.s50 { color: #f87171; }
+.s0 { color: #ef4444; }
+.task-name { max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lvl { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 600; }
+.lvl-L1 { background: #164e63; color: #67e8f9; }
+.lvl-L2 { background: #1e3a5f; color: #7dd3fc; }
+.lvl-L3 { background: #312e81; color: #a5b4fc; }
+.lvl-L4 { background: #4c1d95; color: #c4b5fd; }
+.lvl-L5 { background: #701a75; color: #f0abfc; }
+.lvl-L6 { background: #7f1d1d; color: #fca5a5; }
+
+/* 洞察区 */
+.insights { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+.insight { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; }
+.insight h3 { font-size: 1em; color: #cbd5e1; margin-bottom: 12px; }
+.insight ul { list-style: none; padding: 0; }
+.insight li { padding: 6px 0; border-bottom: 1px solid #0f172a; font-size: 0.9em; }
+.insight li:last-child { border: none; }
+.tag-good { color: #4ade80; }
+.tag-bad { color: #f87171; }
+.tag-neutral { color: #fbbf24; }
+
+@media (max-width: 900px) {
+    .charts, .insights { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>PC-Sim Skill Benchmark Report</h1>
+    <p>AI Agent 在 PC 模拟器环境中的多维度能力评测</p>
+    <div class="meta">
+        <span>52 Tasks (L1-L6)</span>
+        <span>5 Models / Configs</span>
+        <span>Scorer: Claude Opus 4.6</span>
+        <span>Date: 2026-04-02</span>
+    </div>
+</header>
+
+<!-- 总览卡片 -->
+<div class="overview">
+    <div class="card best">
+        <div class="label">deepseek-chat</div>
+        <div class="value">98.3%</div>
+        <div class="sub">Auto 99.0% | Claude 97.9%</div>
+    </div>
+    <div class="card ">
+        <div class="label">Qwen 9B v1</div>
+        <div class="value">75.9%</div>
+        <div class="sub">Auto 77.2% | Claude 75.0%</div>
+    </div>
+    <div class="card ">
+        <div class="label">Qwen 9B v2</div>
+        <div class="value">79.6%</div>
+        <div class="sub">Auto 83.0% | Claude 77.4%</div>
+    </div>
+    <div class="card ">
+        <div class="label">Qwen 4B</div>
+        <div class="value">83.0%</div>
+        <div class="sub">Auto 84.6% | Claude 81.9%</div>
+    </div>
+    <div class="card ">
+        <div class="label">Qwen 9B v3</div>
+        <div class="value">88.8%</div>
+        <div class="sub">Auto 90.5% | Claude 87.6%</div>
+    </div>
+</div>
+
+<!-- 图表区域 -->
+<div class="charts">
+    <div class="chart-box"><h3>综合得分对比</h3><canvas id="chartOverall"></canvas></div>
+    <div class="chart-box"><h3>四维能力雷达图 (deepseek vs Qwen 9B v3)</h3><canvas id="chartRadar"></canvas></div>
+    <div class="chart-box"><h3>各难度级别得分</h3><canvas id="chartLevel"></canvas></div>
+    <div class="chart-box"><h3>Qwen 9B 优化趋势 (v1 → v2 → v3)</h3><canvas id="chartTrend"></canvas></div>
+</div>
+<div class="table-wrap"><h3>逐任务得分热力图 (Combined Score)</h3>
+<table><thead><tr><th>#</th><th>Task</th><th>Lvl</th><th style="text-align:center">deepseek-chat</th><th style="text-align:center">Qwen 9B v1</th><th style="text-align:center">Qwen 9B v2</th><th style="text-align:center">Qwen 4B</th><th style="text-align:center">Qwen 9B v3</th></tr></thead><tbody><tr><td>1</td><td class="task-name" title="查询北京天气">查询北京天气</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td><td class="score-cell s100">100%</td><td class="score-cell s100">99%</td><td class="score-cell s100">100%</td></tr><tr><td>2</td><td class="task-name" title="查询电池状态">查询电池状态</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">0%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>3</td><td class="task-name" title="查询联系人列表">查询联系人列表</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s80">88%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>4</td><td class="task-name" title="查看收件箱邮件">查看收件箱邮件</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td><td class="score-cell s90">93%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td></tr><tr><td>5</td><td class="task-name" title="查询当前音量">查询当前音量</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s70">78%</td><td class="score-cell s90">92%</td><td class="score-cell s100">98%</td><td class="score-cell s70">76%</td><td class="score-cell s100">100%</td></tr><tr><td>6</td><td class="task-name" title="查看闹钟列表">查看闹钟列表</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td></tr><tr><td>7</td><td class="task-name" title="查询当前位置">查询当前位置</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">98%</td><td class="score-cell s0">0%</td><td class="score-cell s0">3%</td><td class="score-cell s90">92%</td><td class="score-cell s100">100%</td></tr><tr><td>8</td><td class="task-name" title="查看手机通知">查看手机通知</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td><td class="score-cell s80">88%</td><td class="score-cell s100">100%</td><td class="score-cell s90">96%</td></tr><tr><td>9</td><td class="task-name" title="查看已配对蓝牙设备">查看已配对蓝牙设备</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s80">89%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td><td class="score-cell s90">96%</td></tr><tr><td>10</td><td class="task-name" title="查询室内温度传感器">查询室内温度传感器</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">0%</td><td class="score-cell s100">100%</td><td class="score-cell s90">90%</td><td class="score-cell s100">100%</td></tr><tr><td>11</td><td class="task-name" title="查看可播放视频列表">查看可播放视频列表</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s80">86%</td><td class="score-cell s0">8%</td><td class="score-cell s100">100%</td></tr><tr><td>12</td><td class="task-name" title="查询电脑配置信息">查询电脑配置信息</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">15%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>13</td><td class="task-name" title="查看当前运行进程">查看当前运行进程</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">47%</td><td class="score-cell s0">47%</td><td class="score-cell s100">100%</td><td class="score-cell s0">40%</td></tr><tr><td>14</td><td class="task-name" title="查看文件列表">查看文件列表</td><td><span class="lvl lvl-L1">L1</span></td><td class="score-cell s90">94%</td><td class="score-cell s80">84%</td><td class="score-cell s0">46%</td><td class="score-cell s90">95%</td><td class="score-cell s90">95%</td></tr><tr><td>15</td><td class="task-name" title="创建新联系人">创建新联系人</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s80">83%</td><td class="score-cell s90">96%</td><td class="score-cell s0">13%</td><td class="score-cell s100">100%</td></tr><tr><td>16</td><td class="task-name" title="设置早起闹钟">设置早起闹钟</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">99%</td><td class="score-cell s100">100%</td><td class="score-cell s80">86%</td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td></tr><tr><td>17</td><td class="task-name" title="创建购物备忘录">创建购物备忘录</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">38%</td><td class="score-cell s100">100%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td></tr><tr><td>18</td><td class="task-name" title="调整屏幕亮度">调整屏幕亮度</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">97%</td><td class="score-cell s90">97%</td><td class="score-cell s80">81%</td><td class="score-cell s100">100%</td></tr><tr><td>19</td><td class="task-name" title="支付宝付款">支付宝付款</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s90">90%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>20</td><td class="task-name" title="切换深色模式">切换深色模式</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">90%</td><td class="score-cell s90">97%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>21</td><td class="task-name" title="浏览器打开网页">浏览器打开网页</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s70">70%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td><td class="score-cell s70">73%</td></tr><tr><td>22</td><td class="task-name" title="播放指定歌曲">播放指定歌曲</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s90">91%</td><td class="score-cell s80">86%</td><td class="score-cell s100">100%</td><td class="score-cell s70">70%</td><td class="score-cell s100">100%</td></tr><tr><td>23</td><td class="task-name" title="设置5分钟倒计时">设置5分钟倒计时</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">99%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>24</td><td class="task-name" title="拍照">拍照</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">22%</td><td class="score-cell s0">0%</td><td class="score-cell s90">96%</td><td class="score-cell s90">96%</td></tr><tr><td>25</td><td class="task-name" title="创建带标签的笔记">创建带标签的笔记</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">99%</td><td class="score-cell s100">100%</td><td class="score-cell s80">84%</td></tr><tr><td>26</td><td class="task-name" title="授予应用权限">授予应用权限</td><td><span class="lvl lvl-L2">L2</span></td><td class="score-cell s100">98%</td><td class="score-cell s90">96%</td><td class="score-cell s0">2%</td><td class="score-cell s90">90%</td><td class="score-cell s100">99%</td></tr><tr><td>27</td><td class="task-name" title="创建联系人并加入分组">创建联系人并加入分组</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">99%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td></tr><tr><td>28</td><td class="task-name" title="撰写并发送邮件">撰写并发送邮件</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td><td class="score-cell s100">100%</td><td class="score-cell s90">92%</td><td class="score-cell s100">100%</td></tr><tr><td>29</td><td class="task-name" title="开始并停止录音">开始并停止录音</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">92%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td></tr><tr><td>30</td><td class="task-name" title="查看备忘录并置顶">查看备忘录并置顶</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td><td class="score-cell s100">100%</td><td class="score-cell s90">92%</td></tr><tr><td>31</td><td class="task-name" title="创建相册并移入照片">创建相册并移入照片</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s90">94%</td><td class="score-cell s90">91%</td><td class="score-cell s90">91%</td><td class="score-cell s90">91%</td><td class="score-cell s90">90%</td></tr><tr><td>32</td><td class="task-name" title="查看日程并修改提醒时间">查看日程并修改提醒时间</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">99%</td><td class="score-cell s0">49%</td><td class="score-cell s100">100%</td><td class="score-cell s0">8%</td><td class="score-cell s0">4%</td></tr><tr><td>33</td><td class="task-name" title="扫描并配对蓝牙设备">扫描并配对蓝牙设备</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">100%</td><td class="score-cell s80">84%</td><td class="score-cell s0">0%</td><td class="score-cell s100">98%</td><td class="score-cell s100">100%</td></tr><tr><td>34</td><td class="task-name" title="暂停音乐并开启随机播放">暂停音乐并开启随机播放</td><td><span class="lvl lvl-L3">L3</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td><td class="score-cell s90">90%</td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td></tr><tr><td>35</td><td class="task-name" title="查联系人电话并拨打">查联系人电话并拨打</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">99%</td><td class="score-cell s90">96%</td><td class="score-cell s90">93%</td><td class="score-cell s100">99%</td><td class="score-cell s90">95%</td></tr><tr><td>36</td><td class="task-name" title="查询明天会议和天气">查询明天会议和天气</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">4%</td><td class="score-cell s90">90%</td><td class="score-cell s0">22%</td><td class="score-cell s100">99%</td></tr><tr><td>37</td><td class="task-name" title="转发邮件给联系人">转发邮件给联系人</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s0">16%</td><td class="score-cell s70">72%</td><td class="score-cell s80">83%</td><td class="score-cell s0">45%</td></tr><tr><td>38</td><td class="task-name" title="截屏并通过蓝牙传输">截屏并通过蓝牙传输</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s80">89%</td><td class="score-cell s90">90%</td><td class="score-cell s0">13%</td></tr><tr><td>39</td><td class="task-name" title="静音并设置媒体音量为0">静音并设置媒体音量为0</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s50">59%</td><td class="score-cell s100">99%</td><td class="score-cell s80">84%</td><td class="score-cell s80">85%</td></tr><tr><td>40</td><td class="task-name" title="查询路线并记录到备忘录">查询路线并记录到备忘录</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s60">63%</td><td class="score-cell s100">99%</td><td class="score-cell s90">92%</td><td class="score-cell s100">99%</td></tr><tr><td>41</td><td class="task-name" title="查看未读邮件并回复">查看未读邮件并回复</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">98%</td><td class="score-cell s100">100%</td><td class="score-cell s90">93%</td><td class="score-cell s100">100%</td></tr><tr><td>42</td><td class="task-name" title="查看Python版本并安装包">查看Python版本并安装包</td><td><span class="lvl lvl-L4">L4</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s0">19%</td><td class="score-cell s100">100%</td><td class="score-cell s0">19%</td></tr><tr><td>43</td><td class="task-name" title="完整起床提醒设置">完整起床提醒设置</td><td><span class="lvl lvl-L5">L5</span></td><td class="score-cell s100">98%</td><td class="score-cell s60">61%</td><td class="score-cell s90">90%</td><td class="score-cell s0">26%</td><td class="score-cell s80">88%</td></tr><tr><td>44</td><td class="task-name" title="会议准备全流程">会议准备全流程</td><td><span class="lvl lvl-L5">L5</span></td><td class="score-cell s90">94%</td><td class="score-cell s90">91%</td><td class="score-cell s90">91%</td><td class="score-cell s0">35%</td><td class="score-cell s90">90%</td></tr><tr><td>45</td><td class="task-name" title="出门前设备配置">出门前设备配置</td><td><span class="lvl lvl-L5">L5</span></td><td class="score-cell s100">98%</td><td class="score-cell s0">8%</td><td class="score-cell s80">89%</td><td class="score-cell s0">42%</td><td class="score-cell s90">90%</td></tr><tr><td>46</td><td class="task-name" title="设备完整备份准备">设备完整备份准备</td><td><span class="lvl lvl-L5">L5</span></td><td class="score-cell s90">91%</td><td class="score-cell s100">98%</td><td class="score-cell s0">43%</td><td class="score-cell s90">92%</td><td class="score-cell s70">74%</td></tr><tr><td>47</td><td class="task-name" title="专注模式全配置">专注模式全配置</td><td><span class="lvl lvl-L5">L5</span></td><td class="score-cell s90">90%</td><td class="score-cell s80">86%</td><td class="score-cell s0">3%</td><td class="score-cell s80">89%</td><td class="score-cell s90">91%</td></tr><tr><td>48</td><td class="task-name" title="删除不存在的联系人">删除不存在的联系人</td><td><span class="lvl lvl-L6">L6</span></td><td class="score-cell s90">96%</td><td class="score-cell s80">85%</td><td class="score-cell s90">95%</td><td class="score-cell s90">93%</td><td class="score-cell s90">95%</td></tr><tr><td>49</td><td class="task-name" title="向离线设备传输文件">向离线设备传输文件</td><td><span class="lvl lvl-L6">L6</span></td><td class="score-cell s100">100%</td><td class="score-cell s80">84%</td><td class="score-cell s0">18%</td><td class="score-cell s90">91%</td><td class="score-cell s100">100%</td></tr><tr><td>50</td><td class="task-name" title="尝试卸载系统应用">尝试卸载系统应用</td><td><span class="lvl lvl-L6">L6</span></td><td class="score-cell s100">100%</td><td class="score-cell s90">96%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td></tr><tr><td>51</td><td class="task-name" title="无录音状态下停止录音">无录音状态下停止录音</td><td><span class="lvl lvl-L6">L6</span></td><td class="score-cell s100">98%</td><td class="score-cell s100">100%</td><td class="score-cell s90">91%</td><td class="score-cell s100">100%</td><td class="score-cell s90">92%</td></tr><tr><td>52</td><td class="task-name" title="余额不足时的支付处理">余额不足时的支付处理</td><td><span class="lvl lvl-L6">L6</span></td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s100">100%</td><td class="score-cell s0">4%</td><td class="score-cell s100">100%</td></tr></tbody></table></div>
+<div class="insights">
+    <div class="insight">
+        <h3>Qwen 9B v3 亮点</h3>
+        <ul>
+<li><span class="tag-good">&#9679;</span> 32/52 个任务达到 95% 以上</li><li><span class="tag-good">&#9650;</span> 查询电池状态: v1→v3 提升 +100%</li><li><span class="tag-good">&#9650;</span> 查询当前位置: v1→v3 提升 +100%</li><li><span class="tag-good">&#9650;</span> 查询室内温度传感器: v1→v3 提升 +100%</li><li><span class="tag-good">&#9650;</span> 查询明天会议和天气: v1→v3 提升 +94%</li><li><span class="tag-good">&#9650;</span> 查询电脑配置信息: v1→v3 提升 +85%</li><li><span class="tag-good">&#9650;</span> 出门前设备配置: v1→v3 提升 +82%</li></ul></div>
+    <div class="insight">
+        <h3>Qwen 9B v3 待改进</h3>
+        <ul>
+<li><span class="tag-bad">&#9660;</span> 查看日程并修改提醒时间: 4%</li><li><span class="tag-bad">&#9660;</span> 截屏并通过蓝牙传输: 13%</li><li><span class="tag-bad">&#9660;</span> 查看Python版本并安装包: 19%</li><li><span class="tag-bad">&#9660;</span> 查看当前运行进程: 40%</li><li><span class="tag-bad">&#9660;</span> 转发邮件给联系人: 45%</li>
+            <li><span class="tag-neutral">&#9679;</span> 效率维度 (75%) 仍是最大短板</li>
+            <li><span class="tag-neutral">&#9679;</span> 部分任务仍用系统命令替代 pc-sim</li>
+        </ul>
+    </div>
+    <div class="insight">
+        <h3>优化效果</h3>
+        <ul>
+            <li><span class="tag-good">&#9679;</span> 删除 BOOTSTRAP.md: +3.7%</li>
+            <li><span class="tag-good">&#9679;</span> TOOLS.md 工具索引: +9.2%</li>
+            <li><span class="tag-good">&#9679;</span> 总提升: 75.9% → 88.8% (+12.9%)</li>
+            <li><span class="tag-neutral">&#9679;</span> Prompt 工程 > 模型大小 (4B+优化 > 9B 裸跑)</li>
+        </ul>
+    </div>
+    <div class="insight">
+        <h3>核心结论</h3>
+        <ul>
+            <li><span class="tag-good">&#9679;</span> deepseek-chat 综合最优 (98.3%)</li>
+            <li><span class="tag-good">&#9679;</span> Qwen 9B v3 与 deepseek 差距缩至 9.5%</li>
+            <li><span class="tag-neutral">&#9679;</span> 小模型核心瓶颈: 不先读 SKILL.md 就猜命令</li>
+            <li><span class="tag-neutral">&#9679;</span> 效率是所有小模型的共同短板</li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.borderColor = '#334155';
+
+
+new Chart(document.getElementById('chartOverall'), {
+    type: 'bar',
+    data: {
+        labels: ["deepseek-chat", "Qwen 9B v1", "Qwen 9B v2", "Qwen 4B", "Qwen 9B v3"],
+        datasets: [
+            { label: 'Automated', data: [99.0, 77.2, 83.0, 84.6, 90.5], backgroundColor: 'rgba(59,130,246,0.6)', borderColor: '#3b82f6', borderWidth: 1 },
+            { label: 'Claude Manual', data: [97.9, 75.0, 77.4, 81.9, 87.6], backgroundColor: 'rgba(168,85,247,0.6)', borderColor: '#a855f7', borderWidth: 1 },
+            { label: 'Combined', data: [98.3, 75.9, 79.6, 83.0, 88.8], backgroundColor: 'rgba(34,197,94,0.6)', borderColor: '#22c55e', borderWidth: 1 },
+        ]
+    },
+    options: { responsive: true, scales: { y: { min: 50, max: 100 } }, plugins: { legend: { position: 'bottom' } } }
+});
+
+new Chart(document.getElementById('chartRadar'), {
+    type: 'radar',
+    data: {
+        labels: ["\u4efb\u52a1\u5b8c\u6210", "\u5de5\u5177\u4f7f\u7528", "\u56de\u7b54\u8d28\u91cf", "\u6548\u7387"],
+        datasets: [
+            { label: 'deepseek-chat', data: [100.0, 99.8, 98.8, 91.0], borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.15)', pointRadius: 4 },
+            { label: 'Qwen 9B v3', data: [93.1, 85.0, 93.8, 75.0], borderColor: '#16a34a', backgroundColor: 'rgba(22,163,74,0.15)', pointRadius: 4 },
+        ]
+    },
+    options: { responsive: true, scales: { r: { min: 50, max: 100, ticks: { stepSize: 10 } } }, plugins: { legend: { position: 'bottom' } } }
+});
+
+new Chart(document.getElementById('chartLevel'), {
+    type: 'bar',
+    data: {
+        labels: ["L1 \u4fe1\u606f\u67e5\u8be2", "L2 \u5355\u6b65\u64cd\u4f5c", "L3 \u540c\u6280\u80fd\u591a\u6b65", "L4 \u8de8\u6280\u80fd\u534f\u4f5c", "L5 \u590d\u6742\u573a\u666f", "L6 \u5f02\u5e38\u5904\u7406"],
+        datasets: [
+{ label: "deepseek-chat", data: [97.9, 99.0, 98.9, 99.8, 94.1, 98.8], backgroundColor: "#2563eb88", borderColor: "#2563eb", borderWidth: 1 },{ label: "Qwen 9B v1", data: [64.8, 81.8, 89.2, 67.1, 68.6, 93.2], backgroundColor: "#dc262688", borderColor: "#dc2626", borderWidth: 1 },{ label: "Qwen 9B v2", data: [81.2, 79.4, 84.0, 82.5, 63.2, 80.7], backgroundColor: "#ea580c88", borderColor: "#ea580c", borderWidth: 1 },{ label: "Qwen 4B", data: [89.0, 87.0, 86.2, 83.0, 56.9, 77.8], backgroundColor: "#ca8a0488", borderColor: "#ca8a04", borderWidth: 1 },{ label: "Qwen 9B v3", data: [94.8, 95.9, 84.4, 69.2, 86.7, 95.6], backgroundColor: "#16a34a88", borderColor: "#16a34a", borderWidth: 1 },
+        ]
+    },
+    options: { responsive: true, scales: { y: { min: 0, max: 100 } }, plugins: { legend: { position: 'bottom' } } }
+});
+
+new Chart(document.getElementById('chartTrend'), {
+    type: 'line',
+    data: {
+        labels: ['v1 (初始)', 'v2 (删BOOTSTRAP)', 'v3 (+TOOLS.md)'],
+        datasets: [
+            { label: '任务完成', data: [82.9, 84.4, 93.1], borderColor: '#22c55e', tension: 0.3, pointRadius: 5 },
+            { label: '工具使用', data: [71.3, 73.1, 85.0], borderColor: '#3b82f6', tension: 0.3, pointRadius: 5 },
+            { label: '回答质量', data: [80.4, 84.6, 93.8], borderColor: '#a855f7', tension: 0.3, pointRadius: 5 },
+            { label: '效率', data: [61.2, 63.1, 75.0], borderColor: '#f59e0b', tension: 0.3, pointRadius: 5 },
+        ]
+    },
+    options: { responsive: true, scales: { y: { min: 50, max: 100 } }, plugins: { legend: { position: 'bottom' } } }
+});
+</script>
+
+<footer style="text-align:center; padding:30px 0; color:#475569; font-size:0.8em; border-top:1px solid #1e293b; margin-top:20px;">
+    Generated by pinchbench + Claude Opus 4.6 | PC-Sim Skill Benchmark | 2026-04-02
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,2950 @@
+{
+  "model": "agent:main",
+  "benchmark_version": "1e2ba6b",
+  "run_id": "0009",
+  "timestamp": 1775111758.5196555,
+  "suite": "all",
+  "runs_per_task": 1,
+  "tasks": [
+    {
+      "task_id": "task_23_pcsim_weather_query",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.16637372970581,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48670,
+        "output_tokens": 193,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48863,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_23_pcsim_weather_query",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_weather_get_current": 1.0,
+              "response_contains_22": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_23_pcsim_weather_query",
+        "name": "\u67e5\u8be2\u5317\u4eac\u5929\u6c14",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "weather"
+        ]
+      }
+    },
+    {
+      "task_id": "task_24_pcsim_battery_status",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.27180504798889,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48594,
+        "output_tokens": 177,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48771,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_24_pcsim_battery_status",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_battery_get_status": 1.0,
+              "response_contains_85": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_24_pcsim_battery_status",
+        "name": "\u67e5\u8be2\u7535\u6c60\u72b6\u6001",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "battery"
+        ]
+      }
+    },
+    {
+      "task_id": "task_25_pcsim_contacts_list",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.27841830253601,
+      "transcript_length": 8,
+      "usage": {
+        "input_tokens": 32251,
+        "output_tokens": 279,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 32530,
+        "cost_usd": 0.0,
+        "request_count": 2
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_25_pcsim_contacts_list",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_contacts_list": 1.0,
+              "response_contains_Alice": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_25_pcsim_contacts_list",
+        "name": "\u67e5\u8be2\u8054\u7cfb\u4eba\u5217\u8868",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "contacts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_26_pcsim_email_inbox",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.527164697647095,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 49298,
+        "output_tokens": 280,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49578,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_26_pcsim_email_inbox",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_email_list_inbox": 1.0,
+              "response_contains_Meeting_tomorrow": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_26_pcsim_email_inbox",
+        "name": "\u67e5\u770b\u6536\u4ef6\u7bb1\u90ae\u4ef6",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "email"
+        ]
+      }
+    },
+    {
+      "task_id": "task_27_pcsim_volume_check",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 13.774786710739136,
+      "transcript_length": 8,
+      "usage": {
+        "input_tokens": 31915,
+        "output_tokens": 134,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 32049,
+        "cost_usd": 0.0,
+        "request_count": 2
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_27_pcsim_volume_check",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_volume_get": 1.0,
+              "response_contains_70": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_27_pcsim_volume_check",
+        "name": "\u67e5\u8be2\u5f53\u524d\u97f3\u91cf",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "volume"
+        ]
+      }
+    },
+    {
+      "task_id": "task_28_pcsim_alarm_list",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.347106218338013,
+      "transcript_length": 8,
+      "usage": {
+        "input_tokens": 32096,
+        "output_tokens": 214,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 32310,
+        "cost_usd": 0.0,
+        "request_count": 2
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_28_pcsim_alarm_list",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_alarm_list": 1.0,
+              "response_contains_0700": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_28_pcsim_alarm_list",
+        "name": "\u67e5\u770b\u95f9\u949f\u5217\u8868",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "alarm"
+        ]
+      }
+    },
+    {
+      "task_id": "task_29_pcsim_location",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.515016555786133,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48950,
+        "output_tokens": 255,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49205,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_29_pcsim_location",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_map_location_get_current_location": 1.0,
+              "response_contains_Beijing": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_29_pcsim_location",
+        "name": "\u67e5\u8be2\u5f53\u524d\u4f4d\u7f6e",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "map_location"
+        ]
+      }
+    },
+    {
+      "task_id": "task_30_pcsim_notifications",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.960176467895508,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48256,
+        "output_tokens": 261,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48517,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_30_pcsim_notifications",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_push_notification_list": 1.0,
+              "response_contains_System_Update": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_30_pcsim_notifications",
+        "name": "\u67e5\u770b\u624b\u673a\u901a\u77e5",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "push_notification"
+        ]
+      }
+    },
+    {
+      "task_id": "task_31_pcsim_bluetooth_list",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.79303288459778,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 65166,
+        "output_tokens": 335,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 65501,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_31_pcsim_bluetooth_list",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_bluetooth_list_paired": 1.0,
+              "response_contains_Headphones": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_31_pcsim_bluetooth_list",
+        "name": "\u67e5\u770b\u5df2\u914d\u5bf9\u84dd\u7259\u8bbe\u5907",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "bluetooth"
+        ]
+      }
+    },
+    {
+      "task_id": "task_32_pcsim_sensor_temp",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 14.385097742080688,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48639,
+        "output_tokens": 152,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48791,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_32_pcsim_sensor_temp",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_sensor_read": 1.0,
+              "response_contains_245": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_32_pcsim_sensor_temp",
+        "name": "\u67e5\u8be2\u5ba4\u5185\u6e29\u5ea6\u4f20\u611f\u5668",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "sensor"
+        ]
+      }
+    },
+    {
+      "task_id": "task_33_pcsim_video_list",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.904705047607422,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 49084,
+        "output_tokens": 285,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49369,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_33_pcsim_video_list",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_video_player_list": 1.0,
+              "response_contains_Intro_to_Python": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_33_pcsim_video_list",
+        "name": "\u67e5\u770b\u53ef\u64ad\u653e\u89c6\u9891\u5217\u8868",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "video_player"
+        ]
+      }
+    },
+    {
+      "task_id": "task_34_pcsim_device_info",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 14.881965160369873,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48763,
+        "output_tokens": 210,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48973,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_34_pcsim_device_info",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_device_manager_get_info": 1.0,
+              "response_contains_8core": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_34_pcsim_device_info",
+        "name": "\u67e5\u8be2\u7535\u8111\u914d\u7f6e\u4fe1\u606f",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "device_manager"
+        ]
+      }
+    },
+    {
+      "task_id": "task_35_pcsim_processes",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.279021739959717,
+      "transcript_length": 8,
+      "usage": {
+        "input_tokens": 41545,
+        "output_tokens": 425,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 41970,
+        "cost_usd": 0.0,
+        "request_count": 2
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_35_pcsim_processes",
+            "score": 0.5,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_shell_list_processes": 0.0,
+              "response_contains_init": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.5,
+        "std": 0.0,
+        "min": 0.5,
+        "max": 0.5
+      },
+      "frontmatter": {
+        "id": "task_35_pcsim_processes",
+        "name": "\u67e5\u770b\u5f53\u524d\u8fd0\u884c\u8fdb\u7a0b",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "shell"
+        ]
+      }
+    },
+    {
+      "task_id": "task_36_pcsim_files",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 21.365381956100464,
+      "transcript_length": 16,
+      "usage": {
+        "input_tokens": 99942,
+        "output_tokens": 458,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 100400,
+        "cost_usd": 0.0,
+        "request_count": 6
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_36_pcsim_files",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_file_manager_list": 1.0,
+              "response_contains_home": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_36_pcsim_files",
+        "name": "\u67e5\u770b\u6587\u4ef6\u5217\u8868",
+        "category": "pcsim_query",
+        "grading_type": "automated",
+        "timeout_seconds": 60,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L1",
+        "skills_involved": [
+          "file_manager"
+        ]
+      }
+    },
+    {
+      "task_id": "task_37_pcsim_create_contact",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.43185043334961,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 49052,
+        "output_tokens": 203,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49255,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_37_pcsim_create_contact",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_contacts_create_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_37_pcsim_create_contact",
+        "name": "\u521b\u5efa\u65b0\u8054\u7cfb\u4eba",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "contacts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_38_pcsim_create_alarm",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.356895208358765,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 64910,
+        "output_tokens": 315,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 65225,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_38_pcsim_create_alarm",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_alarm_create_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_38_pcsim_create_alarm",
+        "name": "\u8bbe\u7f6e\u65e9\u8d77\u95f9\u949f",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "alarm"
+        ]
+      }
+    },
+    {
+      "task_id": "task_39_pcsim_create_memo",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.31821036338806,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48819,
+        "output_tokens": 197,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49016,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_39_pcsim_create_memo",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_memo_create": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_39_pcsim_create_memo",
+        "name": "\u521b\u5efa\u8d2d\u7269\u5907\u5fd8\u5f55",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "memo"
+        ]
+      }
+    },
+    {
+      "task_id": "task_40_pcsim_set_brightness",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.632696866989136,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48717,
+        "output_tokens": 166,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48883,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_40_pcsim_set_brightness",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_display_set_brightness_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_40_pcsim_set_brightness",
+        "name": "\u8c03\u6574\u5c4f\u5e55\u4eae\u5ea6",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "display"
+        ]
+      }
+    },
+    {
+      "task_id": "task_41_pcsim_payment",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 14.470018148422241,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48636,
+        "output_tokens": 196,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48832,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_41_pcsim_payment",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_payment_pay_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_41_pcsim_payment",
+        "name": "\u652f\u4ed8\u5b9d\u4ed8\u6b3e",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "payment"
+        ]
+      }
+    },
+    {
+      "task_id": "task_42_pcsim_dark_theme",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 14.00035572052002,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48694,
+        "output_tokens": 157,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48851,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_42_pcsim_dark_theme",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_display_set_theme_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_42_pcsim_dark_theme",
+        "name": "\u5207\u6362\u6df1\u8272\u6a21\u5f0f",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "display"
+        ]
+      }
+    },
+    {
+      "task_id": "task_43_pcsim_open_browser",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.311182737350464,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 65042,
+        "output_tokens": 231,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 65273,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_43_pcsim_open_browser",
+            "score": 0.5,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_browser_open_url": 1.0,
+              "response_contains_baidu": 0.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.5,
+        "std": 0.0,
+        "min": 0.5,
+        "max": 0.5
+      },
+      "frontmatter": {
+        "id": "task_43_pcsim_open_browser",
+        "name": "\u6d4f\u89c8\u5668\u6253\u5f00\u7f51\u9875",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "browser"
+        ]
+      }
+    },
+    {
+      "task_id": "task_44_pcsim_play_music",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.1815288066864,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 66177,
+        "output_tokens": 207,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 66384,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_44_pcsim_play_music",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_music_player_play": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_44_pcsim_play_music",
+        "name": "\u64ad\u653e\u6307\u5b9a\u6b4c\u66f2",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "music_player"
+        ]
+      }
+    },
+    {
+      "task_id": "task_45_pcsim_countdown",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.10270094871521,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48687,
+        "output_tokens": 246,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48933,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_45_pcsim_countdown",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_timer_create_countdown_with_params": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_45_pcsim_countdown",
+        "name": "\u8bbe\u7f6e5\u5206\u949f\u5012\u8ba1\u65f6",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "timer"
+        ]
+      }
+    },
+    {
+      "task_id": "task_46_pcsim_take_photo",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.00223422050476,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 64920,
+        "output_tokens": 244,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 65164,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_46_pcsim_take_photo",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_camera_capture_photo": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_46_pcsim_take_photo",
+        "name": "\u62cd\u7167",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "camera"
+        ]
+      }
+    },
+    {
+      "task_id": "task_47_pcsim_create_note",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 26.8522846698761,
+      "transcript_length": 24,
+      "usage": {
+        "input_tokens": 165922,
+        "output_tokens": 613,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 166535,
+        "cost_usd": 0.0,
+        "request_count": 10
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_47_pcsim_create_note",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_notes_create": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_47_pcsim_create_note",
+        "name": "\u521b\u5efa\u5e26\u6807\u7b7e\u7684\u7b14\u8bb0",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "notes"
+        ]
+      }
+    },
+    {
+      "task_id": "task_48_pcsim_grant_permission",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.400578260421753,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 66136,
+        "output_tokens": 234,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 66370,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_48_pcsim_grant_permission",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_system_permission_grant": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_48_pcsim_grant_permission",
+        "name": "\u6388\u4e88\u5e94\u7528\u6743\u9650",
+        "category": "pcsim_action",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L2",
+        "skills_involved": [
+          "system_permission"
+        ]
+      }
+    },
+    {
+      "task_id": "task_49_pcsim_create_and_group",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.998618125915527,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 65976,
+        "output_tokens": 336,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 66312,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_49_pcsim_create_and_group",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_contacts_create": 1.0,
+              "called_pc_contacts_add_to_group": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_49_pcsim_create_and_group",
+        "name": "\u521b\u5efa\u8054\u7cfb\u4eba\u5e76\u52a0\u5165\u5206\u7ec4",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "contacts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_50_pcsim_compose_send_email",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 14.857323169708252,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 49213,
+        "output_tokens": 227,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49440,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_50_pcsim_compose_send_email",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_email_send": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_50_pcsim_compose_send_email",
+        "name": "\u64b0\u5199\u5e76\u53d1\u9001\u90ae\u4ef6",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "email"
+        ]
+      }
+    },
+    {
+      "task_id": "task_51_pcsim_record_audio",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.954586029052734,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 82228,
+        "output_tokens": 359,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 82587,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_51_pcsim_record_audio",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_recorder_start": 1.0,
+              "called_pc_recorder_stop": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_51_pcsim_record_audio",
+        "name": "\u5f00\u59cb\u5e76\u505c\u6b62\u5f55\u97f3",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "recorder"
+        ]
+      }
+    },
+    {
+      "task_id": "task_52_pcsim_list_pin_memo",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.43343734741211,
+      "transcript_length": 16,
+      "usage": {
+        "input_tokens": 98875,
+        "output_tokens": 359,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 99234,
+        "cost_usd": 0.0,
+        "request_count": 6
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_52_pcsim_list_pin_memo",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_memo_list": 1.0,
+              "called_memo_lookup": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_52_pcsim_list_pin_memo",
+        "name": "\u67e5\u770b\u5907\u5fd8\u5f55\u5e76\u7f6e\u9876",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "memo"
+        ]
+      }
+    },
+    {
+      "task_id": "task_53_pcsim_create_album_move",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 25.313171863555908,
+      "transcript_length": 22,
+      "usage": {
+        "input_tokens": 150452,
+        "output_tokens": 635,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 151087,
+        "cost_usd": 0.0,
+        "request_count": 9
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_53_pcsim_create_album_move",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_gallery_create_album": 1.0,
+              "called_pc_gallery_move_to_album": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_53_pcsim_create_album_move",
+        "name": "\u521b\u5efa\u76f8\u518c\u5e76\u79fb\u5165\u7167\u7247",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "gallery"
+        ]
+      }
+    },
+    {
+      "task_id": "task_54_pcsim_calendar_reminder",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.283541679382324,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 80570,
+        "output_tokens": 433,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 81003,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_54_pcsim_calendar_reminder",
+            "score": 0.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_calendar_list_events": 0.0,
+              "called_pc_calendar_set_reminder": 0.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "frontmatter": {
+        "id": "task_54_pcsim_calendar_reminder",
+        "name": "\u67e5\u770b\u65e5\u7a0b\u5e76\u4fee\u6539\u63d0\u9192\u65f6\u95f4",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "calendar"
+        ]
+      }
+    },
+    {
+      "task_id": "task_55_pcsim_bluetooth_scan_pair",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.64472985267639,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 65856,
+        "output_tokens": 273,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 66129,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_55_pcsim_bluetooth_scan_pair",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_bluetooth_scan": 1.0,
+              "called_pc_bluetooth_pair": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_55_pcsim_bluetooth_scan_pair",
+        "name": "\u626b\u63cf\u5e76\u914d\u5bf9\u84dd\u7259\u8bbe\u5907",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "bluetooth"
+        ]
+      }
+    },
+    {
+      "task_id": "task_56_pcsim_pause_shuffle",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.736801624298096,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 65561,
+        "output_tokens": 323,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 65884,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_56_pcsim_pause_shuffle",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_music_player_pause": 1.0,
+              "called_pc_music_player_shuffle": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_56_pcsim_pause_shuffle",
+        "name": "\u6682\u505c\u97f3\u4e50\u5e76\u5f00\u542f\u968f\u673a\u64ad\u653e",
+        "category": "pcsim_multi_step",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L3",
+        "skills_involved": [
+          "music_player"
+        ]
+      }
+    },
+    {
+      "task_id": "task_57_pcsim_find_and_call",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.784568071365356,
+      "transcript_length": 16,
+      "usage": {
+        "input_tokens": 100867,
+        "output_tokens": 400,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 101267,
+        "cost_usd": 0.0,
+        "request_count": 6
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_57_pcsim_find_and_call",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_contacts_lookup": 1.0,
+              "called_pc_phone_call_dial": 1.0,
+              "response_contains_15550101": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_57_pcsim_find_and_call",
+        "name": "\u67e5\u8054\u7cfb\u4eba\u7535\u8bdd\u5e76\u62e8\u6253",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "contacts",
+          "phone_call"
+        ]
+      }
+    },
+    {
+      "task_id": "task_58_pcsim_calendar_weather",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.705064296722412,
+      "transcript_length": 13,
+      "usage": {
+        "input_tokens": 67584,
+        "output_tokens": 485,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 68069,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_58_pcsim_calendar_weather",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_calendar_list_events": 1.0,
+              "called_weather_lookup": 1.0,
+              "response_contains_Project_Review": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_58_pcsim_calendar_weather",
+        "name": "\u67e5\u8be2\u660e\u5929\u4f1a\u8bae\u548c\u5929\u6c14",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "calendar",
+          "weather"
+        ]
+      }
+    },
+    {
+      "task_id": "task_59_pcsim_forward_email",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 19.222374200820923,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 82687,
+        "output_tokens": 384,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 83071,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_59_pcsim_forward_email",
+            "score": 0.3333333333333333,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_email_list_inbox": 1.0,
+              "called_contacts_lookup": 0.0,
+              "called_pc_email_forward": 0.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.3333333333333333,
+        "std": 0.0,
+        "min": 0.3333333333333333,
+        "max": 0.3333333333333333
+      },
+      "frontmatter": {
+        "id": "task_59_pcsim_forward_email",
+        "name": "\u8f6c\u53d1\u90ae\u4ef6\u7ed9\u8054\u7cfb\u4eba",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "email",
+          "contacts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_60_pcsim_screenshot_transfer",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 22.768739461898804,
+      "transcript_length": 18,
+      "usage": {
+        "input_tokens": 116089,
+        "output_tokens": 515,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 116604,
+        "cost_usd": 0.0,
+        "request_count": 7
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_60_pcsim_screenshot_transfer",
+            "score": 0.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_screenshot_take_screenshot": 0.0,
+              "called_pc_bluetooth_transfer": 0.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "frontmatter": {
+        "id": "task_60_pcsim_screenshot_transfer",
+        "name": "\u622a\u5c4f\u5e76\u901a\u8fc7\u84dd\u7259\u4f20\u8f93",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "screenshot",
+          "bluetooth"
+        ]
+      }
+    },
+    {
+      "task_id": "task_61_pcsim_silent_volume",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 44.91739201545715,
+      "transcript_length": 51,
+      "usage": {
+        "input_tokens": 363560,
+        "output_tokens": 1475,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 365035,
+        "cost_usd": 0.0,
+        "request_count": 20
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_61_pcsim_silent_volume",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_sound_settings_set_profile": 1.0,
+              "called_pc_volume_set": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_61_pcsim_silent_volume",
+        "name": "\u9759\u97f3\u5e76\u8bbe\u7f6e\u5a92\u4f53\u97f3\u91cf\u4e3a0",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "sound_settings",
+          "volume"
+        ]
+      }
+    },
+    {
+      "task_id": "task_62_pcsim_directions_memo",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.878166675567627,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 83372,
+        "output_tokens": 428,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 83800,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_62_pcsim_directions_memo",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_map_location_get_directions": 1.0,
+              "called_pc_memo_create": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_62_pcsim_directions_memo",
+        "name": "\u67e5\u8be2\u8def\u7ebf\u5e76\u8bb0\u5f55\u5230\u5907\u5fd8\u5f55",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "map_location",
+          "memo"
+        ]
+      }
+    },
+    {
+      "task_id": "task_63_pcsim_reply_email",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.246846914291382,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 66543,
+        "output_tokens": 368,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 66911,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_63_pcsim_reply_email",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_email_list_inbox": 1.0,
+              "called_pc_email_reply": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_63_pcsim_reply_email",
+        "name": "\u67e5\u770b\u672a\u8bfb\u90ae\u4ef6\u5e76\u56de\u590d",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "email"
+        ]
+      }
+    },
+    {
+      "task_id": "task_64_pcsim_install_package",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 18.446577310562134,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48341,
+        "output_tokens": 179,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48520,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_64_pcsim_install_package",
+            "score": 0.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_runtime_lookup": 0.0,
+              "called_pc_runtime_env_install_package": 0.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "frontmatter": {
+        "id": "task_64_pcsim_install_package",
+        "name": "\u67e5\u770bPython\u7248\u672c\u5e76\u5b89\u88c5\u5305",
+        "category": "pcsim_cross_skill",
+        "grading_type": "automated",
+        "timeout_seconds": 120,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L4",
+        "skills_involved": [
+          "runtime_env"
+        ]
+      }
+    },
+    {
+      "task_id": "task_65_pcsim_morning_routine",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 27.428919553756714,
+      "transcript_length": 21,
+      "usage": {
+        "input_tokens": 86000,
+        "output_tokens": 900,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 86900,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_65_pcsim_morning_routine",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_alarm_create": 1.0,
+              "called_weather_lookup": 1.0,
+              "called_pc_calendar_list_events": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_65_pcsim_morning_routine",
+        "name": "\u5b8c\u6574\u8d77\u5e8a\u63d0\u9192\u8bbe\u7f6e",
+        "category": "pcsim_workflow",
+        "grading_type": "automated",
+        "timeout_seconds": 180,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L5",
+        "skills_involved": [
+          "alarm",
+          "weather",
+          "calendar"
+        ]
+      }
+    },
+    {
+      "task_id": "task_66_pcsim_meeting_prep",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 37.13799262046814,
+      "transcript_length": 26,
+      "usage": {
+        "input_tokens": 185651,
+        "output_tokens": 1090,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 186741,
+        "cost_usd": 0.0,
+        "request_count": 11
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_66_pcsim_meeting_prep",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_calendar_list_events": 1.0,
+              "called_contacts_lookup": 1.0,
+              "called_email_lookup": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_66_pcsim_meeting_prep",
+        "name": "\u4f1a\u8bae\u51c6\u5907\u5168\u6d41\u7a0b",
+        "category": "pcsim_workflow",
+        "grading_type": "automated",
+        "timeout_seconds": 180,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L5",
+        "skills_involved": [
+          "calendar",
+          "contacts",
+          "email"
+        ]
+      }
+    },
+    {
+      "task_id": "task_67_pcsim_leave_home",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 27.47656011581421,
+      "transcript_length": 26,
+      "usage": {
+        "input_tokens": 139531,
+        "output_tokens": 727,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 140258,
+        "cost_usd": 0.0,
+        "request_count": 8
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_67_pcsim_leave_home",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_pc_display_set_timeout": 1.0,
+              "called_pc_battery_set_power_mode": 1.0,
+              "called_sound_lookup": 1.0,
+              "called_pc_push_notification_dismiss_all": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_67_pcsim_leave_home",
+        "name": "\u51fa\u95e8\u524d\u8bbe\u5907\u914d\u7f6e",
+        "category": "pcsim_workflow",
+        "grading_type": "automated",
+        "timeout_seconds": 180,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L5",
+        "skills_involved": [
+          "display",
+          "battery",
+          "sound_settings",
+          "push_notification"
+        ]
+      }
+    },
+    {
+      "task_id": "task_68_pcsim_backup",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 34.75251507759094,
+      "transcript_length": 23,
+      "usage": {
+        "input_tokens": 136047,
+        "output_tokens": 1386,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 137433,
+        "cost_usd": 0.0,
+        "request_count": 8
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_68_pcsim_backup",
+            "score": 0.75,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_device_lookup": 0.0,
+              "called_pc_runtime_env_list_packages": 1.0,
+              "called_contacts_lookup": 1.0,
+              "response_contains_4": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 0.75,
+        "std": 0.0,
+        "min": 0.75,
+        "max": 0.75
+      },
+      "frontmatter": {
+        "id": "task_68_pcsim_backup",
+        "name": "\u8bbe\u5907\u5b8c\u6574\u5907\u4efd\u51c6\u5907",
+        "category": "pcsim_workflow",
+        "grading_type": "automated",
+        "timeout_seconds": 180,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L5",
+        "skills_involved": [
+          "runtime_env",
+          "contacts",
+          "file_manager"
+        ]
+      }
+    },
+    {
+      "task_id": "task_69_pcsim_focus_mode",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 31.65445876121521,
+      "transcript_length": 28,
+      "usage": {
+        "input_tokens": 178844,
+        "output_tokens": 1005,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 179849,
+        "cost_usd": 0.0,
+        "request_count": 10
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_69_pcsim_focus_mode",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "called_push_lookup": 1.0,
+              "called_pc_display_set_brightness": 1.0,
+              "called_pc_music_player_play": 1.0,
+              "called_pc_timer_create_countdown": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_69_pcsim_focus_mode",
+        "name": "\u4e13\u6ce8\u6a21\u5f0f\u5168\u914d\u7f6e",
+        "category": "pcsim_workflow",
+        "grading_type": "automated",
+        "timeout_seconds": 180,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L5",
+        "skills_involved": [
+          "push_notification",
+          "display",
+          "music_player",
+          "timer"
+        ]
+      }
+    },
+    {
+      "task_id": "task_70_pcsim_delete_nonexistent",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.9474778175354,
+      "transcript_length": 12,
+      "usage": {
+        "input_tokens": 64596,
+        "output_tokens": 279,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 64875,
+        "cost_usd": 0.0,
+        "request_count": 4
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_70_pcsim_delete_nonexistent",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "response_contains_1": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_70_pcsim_delete_nonexistent",
+        "name": "\u5220\u9664\u4e0d\u5b58\u5728\u7684\u8054\u7cfb\u4eba",
+        "category": "pcsim_error_handling",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L6",
+        "skills_involved": [
+          "contacts"
+        ]
+      }
+    },
+    {
+      "task_id": "task_71_pcsim_offline_device",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 16.696289539337158,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48970,
+        "output_tokens": 340,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 49310,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_71_pcsim_offline_device",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "response_contains_1": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_71_pcsim_offline_device",
+        "name": "\u5411\u79bb\u7ebf\u8bbe\u5907\u4f20\u8f93\u6587\u4ef6",
+        "category": "pcsim_error_handling",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L6",
+        "skills_involved": [
+          "file_manager",
+          "bluetooth"
+        ]
+      }
+    },
+    {
+      "task_id": "task_72_pcsim_uninstall_system",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 22.357770681381226,
+      "transcript_length": 18,
+      "usage": {
+        "input_tokens": 119275,
+        "output_tokens": 498,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 119773,
+        "cost_usd": 0.0,
+        "request_count": 7
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_72_pcsim_uninstall_system",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "response_contains_1": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_72_pcsim_uninstall_system",
+        "name": "\u5c1d\u8bd5\u5378\u8f7d\u7cfb\u7edf\u5e94\u7528",
+        "category": "pcsim_error_handling",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L6",
+        "skills_involved": [
+          "runtime_env"
+        ]
+      }
+    },
+    {
+      "task_id": "task_73_pcsim_stop_no_recording",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 17.93106746673584,
+      "transcript_length": 14,
+      "usage": {
+        "input_tokens": 81879,
+        "output_tokens": 283,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 82162,
+        "cost_usd": 0.0,
+        "request_count": 5
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_73_pcsim_stop_no_recording",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "response_contains_1": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_73_pcsim_stop_no_recording",
+        "name": "\u65e0\u5f55\u97f3\u72b6\u6001\u4e0b\u505c\u6b62\u5f55\u97f3",
+        "category": "pcsim_error_handling",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L6",
+        "skills_involved": [
+          "recorder"
+        ]
+      }
+    },
+    {
+      "task_id": "task_74_pcsim_insufficient_funds",
+      "status": "success",
+      "timed_out": false,
+      "execution_time": 15.122320652008057,
+      "transcript_length": 10,
+      "usage": {
+        "input_tokens": 48569,
+        "output_tokens": 209,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "total_tokens": 48778,
+        "cost_usd": 0.0,
+        "request_count": 3
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "grading": {
+        "runs": [
+          {
+            "task_id": "task_74_pcsim_insufficient_funds",
+            "score": 1.0,
+            "max_score": 1.0,
+            "grading_type": "automated",
+            "breakdown": {
+              "response_contains_1": 1.0
+            },
+            "notes": ""
+          }
+        ],
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "frontmatter": {
+        "id": "task_74_pcsim_insufficient_funds",
+        "name": "\u4f59\u989d\u4e0d\u8db3\u65f6\u7684\u652f\u4ed8\u5904\u7406",
+        "category": "pcsim_error_handling",
+        "grading_type": "automated",
+        "timeout_seconds": 90,
+        "workspace_files": [],
+        "pre_exec_command": "rm -rf ~/.pc-simulator/data/state && mkdir -p ~/.pc-simulator/data/state",
+        "difficulty": "L6",
+        "skills_involved": [
+          "payment"
+        ]
+      }
+    }
+  ],
+  "efficiency": {
+    "total_tokens": 4176580,
+    "total_input_tokens": 4156017,
+    "total_output_tokens": 20563,
+    "total_cost_usd": 0.0,
+    "total_requests": 248,
+    "total_execution_time_seconds": 1014.21,
+    "tasks_with_usage_data": 52,
+    "tokens_per_task": 80318.8,
+    "cost_per_task_usd": 0.0,
+    "score_per_1k_tokens": 0.011273,
+    "score_per_dollar": null,
+    "per_task": [
+      {
+        "task_id": "task_23_pcsim_weather_query",
+        "score": 1.0,
+        "total_tokens": 48863,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48863.0
+      },
+      {
+        "task_id": "task_24_pcsim_battery_status",
+        "score": 1.0,
+        "total_tokens": 48771,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48771.0
+      },
+      {
+        "task_id": "task_25_pcsim_contacts_list",
+        "score": 1.0,
+        "total_tokens": 32530,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 32530.0
+      },
+      {
+        "task_id": "task_26_pcsim_email_inbox",
+        "score": 1.0,
+        "total_tokens": 49578,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49578.0
+      },
+      {
+        "task_id": "task_27_pcsim_volume_check",
+        "score": 1.0,
+        "total_tokens": 32049,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 32049.0
+      },
+      {
+        "task_id": "task_28_pcsim_alarm_list",
+        "score": 1.0,
+        "total_tokens": 32310,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 32310.0
+      },
+      {
+        "task_id": "task_29_pcsim_location",
+        "score": 1.0,
+        "total_tokens": 49205,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49205.0
+      },
+      {
+        "task_id": "task_30_pcsim_notifications",
+        "score": 1.0,
+        "total_tokens": 48517,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48517.0
+      },
+      {
+        "task_id": "task_31_pcsim_bluetooth_list",
+        "score": 1.0,
+        "total_tokens": 65501,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 65501.0
+      },
+      {
+        "task_id": "task_32_pcsim_sensor_temp",
+        "score": 1.0,
+        "total_tokens": 48791,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48791.0
+      },
+      {
+        "task_id": "task_33_pcsim_video_list",
+        "score": 1.0,
+        "total_tokens": 49369,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49369.0
+      },
+      {
+        "task_id": "task_34_pcsim_device_info",
+        "score": 1.0,
+        "total_tokens": 48973,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48973.0
+      },
+      {
+        "task_id": "task_35_pcsim_processes",
+        "score": 0.5,
+        "total_tokens": 41970,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 83940.0
+      },
+      {
+        "task_id": "task_36_pcsim_files",
+        "score": 1.0,
+        "total_tokens": 100400,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 100400.0
+      },
+      {
+        "task_id": "task_37_pcsim_create_contact",
+        "score": 1.0,
+        "total_tokens": 49255,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49255.0
+      },
+      {
+        "task_id": "task_38_pcsim_create_alarm",
+        "score": 1.0,
+        "total_tokens": 65225,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 65225.0
+      },
+      {
+        "task_id": "task_39_pcsim_create_memo",
+        "score": 1.0,
+        "total_tokens": 49016,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49016.0
+      },
+      {
+        "task_id": "task_40_pcsim_set_brightness",
+        "score": 1.0,
+        "total_tokens": 48883,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48883.0
+      },
+      {
+        "task_id": "task_41_pcsim_payment",
+        "score": 1.0,
+        "total_tokens": 48832,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48832.0
+      },
+      {
+        "task_id": "task_42_pcsim_dark_theme",
+        "score": 1.0,
+        "total_tokens": 48851,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48851.0
+      },
+      {
+        "task_id": "task_43_pcsim_open_browser",
+        "score": 0.5,
+        "total_tokens": 65273,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 130546.0
+      },
+      {
+        "task_id": "task_44_pcsim_play_music",
+        "score": 1.0,
+        "total_tokens": 66384,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 66384.0
+      },
+      {
+        "task_id": "task_45_pcsim_countdown",
+        "score": 1.0,
+        "total_tokens": 48933,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48933.0
+      },
+      {
+        "task_id": "task_46_pcsim_take_photo",
+        "score": 1.0,
+        "total_tokens": 65164,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 65164.0
+      },
+      {
+        "task_id": "task_47_pcsim_create_note",
+        "score": 1.0,
+        "total_tokens": 166535,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 166535.0
+      },
+      {
+        "task_id": "task_48_pcsim_grant_permission",
+        "score": 1.0,
+        "total_tokens": 66370,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 66370.0
+      },
+      {
+        "task_id": "task_49_pcsim_create_and_group",
+        "score": 1.0,
+        "total_tokens": 66312,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 66312.0
+      },
+      {
+        "task_id": "task_50_pcsim_compose_send_email",
+        "score": 1.0,
+        "total_tokens": 49440,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49440.0
+      },
+      {
+        "task_id": "task_51_pcsim_record_audio",
+        "score": 1.0,
+        "total_tokens": 82587,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 82587.0
+      },
+      {
+        "task_id": "task_52_pcsim_list_pin_memo",
+        "score": 1.0,
+        "total_tokens": 99234,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 99234.0
+      },
+      {
+        "task_id": "task_53_pcsim_create_album_move",
+        "score": 1.0,
+        "total_tokens": 151087,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 151087.0
+      },
+      {
+        "task_id": "task_54_pcsim_calendar_reminder",
+        "score": 0.0,
+        "total_tokens": 81003,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": null
+      },
+      {
+        "task_id": "task_55_pcsim_bluetooth_scan_pair",
+        "score": 1.0,
+        "total_tokens": 66129,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 66129.0
+      },
+      {
+        "task_id": "task_56_pcsim_pause_shuffle",
+        "score": 1.0,
+        "total_tokens": 65884,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 65884.0
+      },
+      {
+        "task_id": "task_57_pcsim_find_and_call",
+        "score": 1.0,
+        "total_tokens": 101267,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 101267.0
+      },
+      {
+        "task_id": "task_58_pcsim_calendar_weather",
+        "score": 1.0,
+        "total_tokens": 68069,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 68069.0
+      },
+      {
+        "task_id": "task_59_pcsim_forward_email",
+        "score": 0.3333,
+        "total_tokens": 83071,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 249213.0
+      },
+      {
+        "task_id": "task_60_pcsim_screenshot_transfer",
+        "score": 0.0,
+        "total_tokens": 116604,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": null
+      },
+      {
+        "task_id": "task_61_pcsim_silent_volume",
+        "score": 1.0,
+        "total_tokens": 365035,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 365035.0
+      },
+      {
+        "task_id": "task_62_pcsim_directions_memo",
+        "score": 1.0,
+        "total_tokens": 83800,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 83800.0
+      },
+      {
+        "task_id": "task_63_pcsim_reply_email",
+        "score": 1.0,
+        "total_tokens": 66911,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 66911.0
+      },
+      {
+        "task_id": "task_64_pcsim_install_package",
+        "score": 0.0,
+        "total_tokens": 48520,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": null
+      },
+      {
+        "task_id": "task_65_pcsim_morning_routine",
+        "score": 1.0,
+        "total_tokens": 86900,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 86900.0
+      },
+      {
+        "task_id": "task_66_pcsim_meeting_prep",
+        "score": 1.0,
+        "total_tokens": 186741,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 186741.0
+      },
+      {
+        "task_id": "task_67_pcsim_leave_home",
+        "score": 1.0,
+        "total_tokens": 140258,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 140258.0
+      },
+      {
+        "task_id": "task_68_pcsim_backup",
+        "score": 0.75,
+        "total_tokens": 137433,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 183244.0
+      },
+      {
+        "task_id": "task_69_pcsim_focus_mode",
+        "score": 1.0,
+        "total_tokens": 179849,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 179849.0
+      },
+      {
+        "task_id": "task_70_pcsim_delete_nonexistent",
+        "score": 1.0,
+        "total_tokens": 64875,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 64875.0
+      },
+      {
+        "task_id": "task_71_pcsim_offline_device",
+        "score": 1.0,
+        "total_tokens": 49310,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 49310.0
+      },
+      {
+        "task_id": "task_72_pcsim_uninstall_system",
+        "score": 1.0,
+        "total_tokens": 119773,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 119773.0
+      },
+      {
+        "task_id": "task_73_pcsim_stop_no_recording",
+        "score": 1.0,
+        "total_tokens": 82162,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 82162.0
+      },
+      {
+        "task_id": "task_74_pcsim_insufficient_funds",
+        "score": 1.0,
+        "total_tokens": 48778,
+        "cost_usd": 0.0,
+        "tokens_per_score_point": 48778.0
+      }
+    ]
+  }
+}

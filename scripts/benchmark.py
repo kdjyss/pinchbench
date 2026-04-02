@@ -236,6 +236,21 @@ def _parse_args() -> argparse.Namespace:
         action="store_true",
         help="Continue running all tasks even if sanity check scores 0%%",
     )
+    parser.add_argument(
+        "--tasks-dir",
+        default=None,
+        help="Custom tasks directory (default: tasks/)",
+    )
+    parser.add_argument(
+        "--save-transcripts",
+        action="store_true",
+        help="Save full transcripts to output dir for manual review",
+    )
+    parser.add_argument(
+        "--agent",
+        default=None,
+        help="Use an existing OpenClaw agent (skip model validation and agent creation)",
+    )
     return parser.parse_args()
 
 
@@ -510,8 +525,12 @@ def main():
         sys.exit(1)
 
     args = _parse_args()
-    if not args.model and not args.register and not args.upload:
-        logger.error("Missing required argument: --model (unless using --register or --upload)")
+    if args.tasks_dir:
+        tasks_dir = Path(args.tasks_dir)
+        if not tasks_dir.is_absolute():
+            tasks_dir = skill_root / args.tasks_dir
+    if not args.model and not args.agent and not args.register and not args.upload:
+        logger.error("Missing required argument: --model or --agent (unless using --register or --upload)")
         sys.exit(2)
 
     if args.register:
@@ -553,22 +572,29 @@ def main():
     logger.info("📂 Loading tasks from directory...")
     runner.load_tasks()
 
-    model_slug = slugify_model(args.model)
     run_root = Path("/tmp/pinchbench")
     run_id = _next_run_id(run_root)
     skill_dir = skill_root
-    agent_id = f"bench-{model_slug}"
-    # Use a shared workspace for the agent - we'll copy fixtures per task
-    agent_workspace = Path(f"/tmp/pinchbench/{run_id}/agent_workspace")
 
-    # Validate model exists before wasting time on tasks
-    try:
-        validate_openrouter_model(args.model)
-    except ModelValidationError as exc:
-        logger.error("❌ %s", exc)
-        sys.exit(1)
+    if args.agent:
+        # Use an existing OpenClaw agent directly (skip model validation)
+        agent_id = args.agent
+        model_slug = args.agent
+        agent_workspace = Path(f"/tmp/pinchbench/{run_id}/agent_workspace")
+        agent_workspace.mkdir(parents=True, exist_ok=True)
+        logger.info("Using existing agent: %s", agent_id)
+    else:
+        model_slug = slugify_model(args.model)
+        agent_id = f"bench-{model_slug}"
+        agent_workspace = Path(f"/tmp/pinchbench/{run_id}/agent_workspace")
+        # Validate model exists before wasting time on tasks
+        try:
+            validate_openrouter_model(args.model)
+        except ModelValidationError as exc:
+            logger.error("❌ %s", exc)
+            sys.exit(1)
+        ensure_agent_exists(agent_id, args.model, agent_workspace)
 
-    ensure_agent_exists(agent_id, args.model, agent_workspace)
     cleanup_agent_sessions(agent_id)
 
     task_ids = _select_task_ids(runner.tasks, args.suite)
@@ -600,11 +626,12 @@ def main():
                 result = execute_openclaw_task(
                     task=task,
                     agent_id=agent_id,
-                    model_id=args.model,
+                    model_id=args.model or "",
                     run_id=f"{run_id}-{run_index + 1}",
                     timeout_multiplier=args.timeout_multiplier,
                     skill_dir=skill_dir,
                     verbose=args.verbose,
+                    skip_workspace_prep=bool(args.agent),
                 )
             except Exception as exc:
                 execution_error = str(exc)
@@ -664,6 +691,28 @@ def main():
             if grade.notes:
                 logger.info("   Notes: %s", grade.notes[:200])
 
+            # Save transcript for manual review
+            if args.save_transcripts:
+                transcript_dir = Path(args.output_dir) / "transcripts"
+                transcript_dir.mkdir(parents=True, exist_ok=True)
+                transcript_path = transcript_dir / f"{task.task_id}.json"
+                transcript_data = {
+                    "task_id": task.task_id,
+                    "task_name": task.name,
+                    "task_prompt": task.prompt,
+                    "expected_behavior": task.expected_behavior,
+                    "grading_criteria": task.grading_criteria,
+                    "difficulty": task.frontmatter.get("difficulty", ""),
+                    "skills_involved": task.frontmatter.get("skills_involved", []),
+                    "transcript": result.get("transcript", []),
+                    "automated_score": grade.score,
+                    "automated_breakdown": grade.breakdown,
+                }
+                transcript_path.write_text(
+                    json.dumps(transcript_data, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+
         task_scores = [grade.score for grade in task_grades]
         grades_by_task_id[task.task_id] = {
             "runs": [grade.to_dict() for grade in task_grades],
@@ -714,7 +763,7 @@ def main():
     efficiency = _compute_efficiency_summary(task_entries, grades_by_task_id)
 
     aggregate = {
-        "model": args.model,
+        "model": args.model or f"agent:{args.agent}",
         "benchmark_version": _get_git_version(skill_root),
         "run_id": run_id,
         "timestamp": time.time(),

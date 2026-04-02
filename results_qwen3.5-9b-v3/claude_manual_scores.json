@@ -1,0 +1,1159 @@
+[
+  {
+    "task_id": "task_23_pcsim_weather_query",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "查询北京天气",
+    "difficulty": "L1",
+    "skills_involved": [
+      "weather"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_weather_get_current": 1.0,
+      "response_contains_22": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_24_pcsim_battery_status",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "查询电池状态",
+    "difficulty": "L1",
+    "skills_involved": [
+      "battery"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_battery_get_status": 1.0,
+      "response_contains_85": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_25_pcsim_contacts_list",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "1步直接调用，表格展示，完美。",
+    "task_name": "查询联系人列表",
+    "difficulty": "L1",
+    "skills_involved": [
+      "contacts"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_contacts_list": 1.0,
+      "response_contains_Alice": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_26_pcsim_email_inbox",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "查看收件箱邮件",
+    "difficulty": "L1",
+    "skills_involved": [
+      "email"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_email_list_inbox": 1.0,
+      "response_contains_Meeting_tomorrow": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_27_pcsim_volume_check",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "1步直接调用pc_volume_get，完美。主动询问是否查看其他音频流。",
+    "task_name": "查询当前音量",
+    "difficulty": "L1",
+    "skills_involved": [
+      "volume"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_volume_get": 1.0,
+      "response_contains_70": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_28_pcsim_alarm_list",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "1步直接调用，表格展示，完美。",
+    "task_name": "查看闹钟列表",
+    "difficulty": "L1",
+    "skills_involved": [
+      "alarm"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_alarm_list": 1.0,
+      "response_contains_0700": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_29_pcsim_location",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。v1/v2都是0分，v3修复了！",
+    "task_name": "查询当前位置",
+    "difficulty": "L1",
+    "skills_involved": [
+      "map_location"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_map_location_get_current_location": 1.0,
+      "response_contains_Beijing": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_30_pcsim_notifications",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.9,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.935,
+    "notes": "第一步猜错(pc_notification_list)，第二步成功。回复详细。",
+    "task_name": "查看手机通知",
+    "difficulty": "L1",
+    "skills_involved": [
+      "push_notification"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_push_notification_list": 1.0,
+      "response_contains_System_Update": 1.0
+    },
+    "combined_score": 0.961
+  },
+  {
+    "task_id": "task_31_pcsim_bluetooth_list",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.9,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.935,
+    "notes": "memory_search(多余)→read→正确调用。3步稍多但结果准确。",
+    "task_name": "查看已配对蓝牙设备",
+    "difficulty": "L1",
+    "skills_involved": [
+      "bluetooth"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_bluetooth_list_paired": 1.0,
+      "response_contains_Headphones": 1.0
+    },
+    "combined_score": 0.961
+  },
+  {
+    "task_id": "task_32_pcsim_sensor_temp",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用含正确参数，2步完美。",
+    "task_name": "查询室内温度传感器",
+    "difficulty": "L1",
+    "skills_involved": [
+      "sensor"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_sensor_read": 1.0,
+      "response_contains_245": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_33_pcsim_video_list",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。v1失败，v2用6步猜，v3直接成功。",
+    "task_name": "查看可播放视频列表",
+    "difficulty": "L1",
+    "skills_involved": [
+      "video_player"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_video_player_list": 1.0,
+      "response_contains_Intro_to_Python": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_34_pcsim_device_info",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。展示模拟器配置而非真实系统。",
+    "task_name": "查询电脑配置信息",
+    "difficulty": "L1",
+    "skills_involved": [
+      "device_manager"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_device_manager_get_info": 1.0,
+      "response_contains_8core": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_35_pcsim_processes",
+    "claude_scores": {
+      "task_completion": 0.5,
+      "tool_usage": 0.0,
+      "response_quality": 0.5,
+      "efficiency": 0.3
+    },
+    "claude_total": 0.335,
+    "notes": "直接用ps aux查真实进程，没调用pc_shell_list_processes。混淆了模拟器和宿主机。",
+    "task_name": "查看当前运行进程",
+    "difficulty": "L1",
+    "skills_involved": [
+      "shell"
+    ],
+    "automated_score": 0.5,
+    "automated_breakdown": {
+      "called_pc_shell_list_processes": 0.0,
+      "response_contains_init": 1.0
+    },
+    "combined_score": 0.401
+  },
+  {
+    "task_id": "task_36_pcsim_files",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.6
+    },
+    "claude_total": 0.92,
+    "notes": "5步全部用pc_file_manager_list，没用系统命令。比之前版本好。但5步逐层探索效率一般。",
+    "task_name": "查看文件列表",
+    "difficulty": "L1",
+    "skills_involved": [
+      "file_manager"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_file_manager_list": 1.0,
+      "response_contains_home": 1.0
+    },
+    "combined_score": 0.952
+  },
+  {
+    "task_id": "task_37_pcsim_create_contact",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。参数正确。",
+    "task_name": "创建新联系人",
+    "difficulty": "L2",
+    "skills_involved": [
+      "contacts"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_contacts_create_with_params": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_38_pcsim_create_alarm",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.96,
+    "notes": "memory_search(多余)→read→正确调用。3步，额外参数--date tomorrow可接受。",
+    "task_name": "设置早起闹钟",
+    "difficulty": "L2",
+    "skills_involved": [
+      "alarm"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_alarm_create_with_params": 1.0
+    },
+    "combined_score": 0.976
+  },
+  {
+    "task_id": "task_39_pcsim_create_memo",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用pc_memo_create，2步完美。",
+    "task_name": "创建购物备忘录",
+    "difficulty": "L2",
+    "skills_involved": [
+      "memo"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_memo_create": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_40_pcsim_set_brightness",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "调整屏幕亮度",
+    "difficulty": "L2",
+    "skills_involved": [
+      "display"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_display_set_brightness_with_params": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_41_pcsim_payment",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "支付宝付款",
+    "difficulty": "L2",
+    "skills_involved": [
+      "payment"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_payment_pay_with_params": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_42_pcsim_dark_theme",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "切换深色模式",
+    "difficulty": "L2",
+    "skills_involved": [
+      "display"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_display_set_theme_with_params": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_43_pcsim_open_browser",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.7
+    },
+    "claude_total": 0.89,
+    "notes": "第一步猜错(pc_browser_op)，读SKILL.md后成功。3步。",
+    "task_name": "浏览器打开网页",
+    "difficulty": "L2",
+    "skills_involved": [
+      "browser"
+    ],
+    "automated_score": 0.5,
+    "automated_breakdown": {
+      "called_pc_browser_open_url": 1.0,
+      "response_contains_baidu": 0.0
+    },
+    "combined_score": 0.734
+  },
+  {
+    "task_id": "task_44_pcsim_play_music",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→list→play --track_id，3步精准。v1需10步，v2需10步，v3只要3步。",
+    "task_name": "播放指定歌曲",
+    "difficulty": "L2",
+    "skills_involved": [
+      "music_player"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_music_player_play": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_45_pcsim_countdown",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→正确调用，2步完美。",
+    "task_name": "设置5分钟倒计时",
+    "difficulty": "L2",
+    "skills_involved": [
+      "timer"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_timer_create_countdown_with_params": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_46_pcsim_take_photo",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.9,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.935,
+    "notes": "第一步猜错(pc_camera_take_photo)，读SKILL.md后成功。3步。v1=11步，v2=0步，v3=3步。",
+    "task_name": "拍照",
+    "difficulty": "L2",
+    "skills_involved": [
+      "camera"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_camera_capture_photo": 1.0
+    },
+    "combined_score": 0.961
+  },
+  {
+    "task_id": "task_47_pcsim_create_note",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.6,
+      "response_quality": 1.0,
+      "efficiency": 0.2
+    },
+    "claude_total": 0.74,
+    "notes": "9步太多：前7步猜各种命令(notes_exists, createnote, --help, install_app, list-skills|grep)。最终成功但效率极差。",
+    "task_name": "创建带标签的笔记",
+    "difficulty": "L2",
+    "skills_involved": [
+      "notes"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_notes_create": 1.0
+    },
+    "combined_score": 0.844
+  },
+  {
+    "task_id": "task_48_pcsim_grant_permission",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.9
+    },
+    "claude_total": 0.98,
+    "notes": "read两个SKILL.md→正确调用。3步高效。",
+    "task_name": "授予应用权限",
+    "difficulty": "L2",
+    "skills_involved": [
+      "system_permission"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_system_permission_grant": 1.0
+    },
+    "combined_score": 0.988
+  },
+  {
+    "task_id": "task_49_pcsim_create_and_group",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→create→add_to_group，3步完美。",
+    "task_name": "创建联系人并加入分组",
+    "difficulty": "L3",
+    "skills_involved": [
+      "contacts"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_contacts_create": 1.0,
+      "called_pc_contacts_add_to_group": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_50_pcsim_compose_send_email",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→直接pc_email_send，2步完美。",
+    "task_name": "撰写并发送邮件",
+    "difficulty": "L3",
+    "skills_involved": [
+      "email"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_email_send": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_51_pcsim_record_audio",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.96,
+    "notes": "read→start→stop→write(多余日志)。4步，write不必要。",
+    "task_name": "开始并停止录音",
+    "difficulty": "L3",
+    "skills_involved": [
+      "recorder"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_recorder_start": 1.0,
+      "called_pc_recorder_stop": 1.0
+    },
+    "combined_score": 0.976
+  },
+  {
+    "task_id": "task_52_pcsim_list_pin_memo",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.6
+    },
+    "claude_total": 0.87,
+    "notes": "5步。pin时猜错参数(m002→--memoId→读SKILL.md→--memo_id)。最终成功。",
+    "task_name": "查看备忘录并置顶",
+    "difficulty": "L3",
+    "skills_involved": [
+      "memo"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_memo_list": 1.0,
+      "called_memo_lookup": 1.0
+    },
+    "combined_score": 0.922
+  },
+  {
+    "task_id": "task_53_pcsim_create_album_move",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.4
+    },
+    "claude_total": 0.83,
+    "notes": "8步。create_album和move_to_album各猜错一次参数。最终成功。",
+    "task_name": "创建相册并移入照片",
+    "difficulty": "L3",
+    "skills_involved": [
+      "gallery"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_gallery_create_album": 1.0,
+      "called_pc_gallery_move_to_album": 1.0
+    },
+    "combined_score": 0.898
+  },
+  {
+    "task_id": "task_54_pcsim_calendar_reminder",
+    "claude_scores": {
+      "task_completion": 0.0,
+      "tool_usage": 0.0,
+      "response_quality": 0.3,
+      "efficiency": 0.0
+    },
+    "claude_total": 0.075,
+    "notes": "完全失败。memory_search→sessions_spawn→session_status，没调用任何pc-sim工具。声称没有日历功能。",
+    "task_name": "查看日程并修改提醒时间",
+    "difficulty": "L3",
+    "skills_involved": [
+      "calendar"
+    ],
+    "automated_score": 0.0,
+    "automated_breakdown": {
+      "called_pc_calendar_list_events": 0.0,
+      "called_pc_calendar_set_reminder": 0.0
+    },
+    "combined_score": 0.045
+  },
+  {
+    "task_id": "task_55_pcsim_bluetooth_scan_pair",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→scan→pair，3步完美。",
+    "task_name": "扫描并配对蓝牙设备",
+    "difficulty": "L3",
+    "skills_involved": [
+      "bluetooth"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_bluetooth_scan": 1.0,
+      "called_pc_bluetooth_pair": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_56_pcsim_pause_shuffle",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 0.9,
+      "efficiency": 0.6
+    },
+    "claude_total": 0.845,
+    "notes": "5步。前两步猜错(pc_music_pause, pc_music_shuffle_active)，读SKILL.md后成功。",
+    "task_name": "暂停音乐并开启随机播放",
+    "difficulty": "L3",
+    "skills_involved": [
+      "music_player"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_music_player_pause": 1.0,
+      "called_pc_music_player_shuffle": 1.0
+    },
+    "combined_score": 0.907
+  },
+  {
+    "task_id": "task_57_pcsim_find_and_call",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.9,
+      "response_quality": 1.0,
+      "efficiency": 0.7
+    },
+    "claude_total": 0.915,
+    "notes": "5步。先get了c002(Bob)再get c001(Alice)，多查了一次。最终正确拨号。",
+    "task_name": "查联系人电话并拨打",
+    "difficulty": "L4",
+    "skills_involved": [
+      "contacts",
+      "phone_call"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_contacts_lookup": 1.0,
+      "called_pc_phone_call_dial": 1.0,
+      "response_contains_15550101": 1.0
+    },
+    "combined_score": 0.949
+  },
+  {
+    "task_id": "task_58_pcsim_calendar_weather",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.9
+    },
+    "claude_total": 0.98,
+    "notes": "4步：read两个SKILL.md→list_events→get_forecast。高效跨技能协调。v1/v2都是0分！",
+    "task_name": "查询明天会议和天气",
+    "difficulty": "L4",
+    "skills_involved": [
+      "calendar",
+      "weather"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_calendar_list_events": 1.0,
+      "called_weather_lookup": 1.0,
+      "response_contains_Project_Review": 1.0
+    },
+    "combined_score": 0.988
+  },
+  {
+    "task_id": "task_59_pcsim_forward_email",
+    "claude_scores": {
+      "task_completion": 0.5,
+      "tool_usage": 0.6,
+      "response_quality": 0.5,
+      "efficiency": 0.5
+    },
+    "claude_total": 0.525,
+    "notes": "4步。list_inbox成功找到Bob邮件，但search失败后没有继续forward。只列出了邮件没完成转发。",
+    "task_name": "转发邮件给联系人",
+    "difficulty": "L4",
+    "skills_involved": [
+      "email",
+      "contacts"
+    ],
+    "automated_score": 0.3333333333333333,
+    "automated_breakdown": {
+      "called_pc_email_list_inbox": 1.0,
+      "called_contacts_lookup": 0.0,
+      "called_pc_email_forward": 0.0
+    },
+    "combined_score": 0.448
+  },
+  {
+    "task_id": "task_60_pcsim_screenshot_transfer",
+    "claude_scores": {
+      "task_completion": 0.3,
+      "tool_usage": 0.1,
+      "response_quality": 0.3,
+      "efficiency": 0.1
+    },
+    "claude_total": 0.21,
+    "notes": "6步全部失败。猜错截屏命令后转用bash/scrot/python截图，完全脱离pc-sim。v2满分，v3严重退步。",
+    "task_name": "截屏并通过蓝牙传输",
+    "difficulty": "L4",
+    "skills_involved": [
+      "screenshot",
+      "bluetooth"
+    ],
+    "automated_score": 0.0,
+    "automated_breakdown": {
+      "called_pc_screenshot_take_screenshot": 0.0,
+      "called_pc_bluetooth_transfer": 0.0
+    },
+    "combined_score": 0.126
+  },
+  {
+    "task_id": "task_61_pcsim_silent_volume",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.7,
+      "response_quality": 1.0,
+      "efficiency": 0.1
+    },
+    "claude_total": 0.745,
+    "notes": "26步极度低效。反复猜静音和音量命令格式。最终成功但过程极其曲折。",
+    "task_name": "静音并设置媒体音量为0",
+    "difficulty": "L4",
+    "skills_involved": [
+      "sound_settings",
+      "volume"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_sound_settings_set_profile": 1.0,
+      "called_pc_volume_set": 1.0
+    },
+    "combined_score": 0.847
+  },
+  {
+    "task_id": "task_62_pcsim_directions_memo",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 0.9
+    },
+    "claude_total": 0.98,
+    "notes": "4步：read→get_directions→read→memo_create。高效。",
+    "task_name": "查询路线并记录到备忘录",
+    "difficulty": "L4",
+    "skills_involved": [
+      "map_location",
+      "memo"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_map_location_get_directions": 1.0,
+      "called_pc_memo_create": 1.0
+    },
+    "combined_score": 0.988
+  },
+  {
+    "task_id": "task_63_pcsim_reply_email",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→list_inbox→reply，3步完美。",
+    "task_name": "查看未读邮件并回复",
+    "difficulty": "L4",
+    "skills_involved": [
+      "email"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_email_list_inbox": 1.0,
+      "called_pc_email_reply": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_64_pcsim_install_package",
+    "claude_scores": {
+      "task_completion": 0.3,
+      "tool_usage": 0.0,
+      "response_quality": 0.5,
+      "efficiency": 0.5
+    },
+    "claude_total": 0.315,
+    "notes": "用python --version和pip install，没用pc-sim工具。获取真实系统信息。",
+    "task_name": "查看Python版本并安装包",
+    "difficulty": "L4",
+    "skills_involved": [
+      "runtime_env"
+    ],
+    "automated_score": 0.0,
+    "automated_breakdown": {
+      "called_runtime_lookup": 0.0,
+      "called_pc_runtime_env_install_package": 0.0
+    },
+    "combined_score": 0.189
+  },
+  {
+    "task_id": "task_65_pcsim_morning_routine",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 0.9,
+      "efficiency": 0.4
+    },
+    "claude_total": 0.805,
+    "notes": "11步。前3步猜错，读3个SKILL.md后完成3个子任务。效率一般但全部成功。",
+    "task_name": "完整起床提醒设置",
+    "difficulty": "L5",
+    "skills_involved": [
+      "alarm",
+      "weather",
+      "calendar"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_alarm_create": 1.0,
+      "called_weather_lookup": 1.0,
+      "called_pc_calendar_list_events": 1.0
+    },
+    "combined_score": 0.883
+  },
+  {
+    "task_id": "task_66_pcsim_meeting_prep",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.4
+    },
+    "claude_total": 0.83,
+    "notes": "10步。前几步猜错，但最终找到会议→查David邮箱→发邮件。全部成功。",
+    "task_name": "会议准备全流程",
+    "difficulty": "L5",
+    "skills_involved": [
+      "calendar",
+      "contacts",
+      "email"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_calendar_list_events": 1.0,
+      "called_contacts_lookup": 1.0,
+      "called_email_lookup": 1.0
+    },
+    "combined_score": 0.898
+  },
+  {
+    "task_id": "task_67_pcsim_leave_home",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.4
+    },
+    "claude_total": 0.83,
+    "notes": "11步。前4步猜错，读4个SKILL.md后4个子任务全部完成。效率一般但全成功。",
+    "task_name": "出门前设备配置",
+    "difficulty": "L5",
+    "skills_involved": [
+      "display",
+      "battery",
+      "sound_settings",
+      "push_notification"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_pc_display_set_timeout": 1.0,
+      "called_pc_battery_set_power_mode": 1.0,
+      "called_sound_lookup": 1.0,
+      "called_pc_push_notification_dismiss_all": 1.0
+    },
+    "combined_score": 0.898
+  },
+  {
+    "task_id": "task_68_pcsim_backup",
+    "claude_scores": {
+      "task_completion": 0.8,
+      "tool_usage": 0.7,
+      "response_quality": 0.9,
+      "efficiency": 0.5
+    },
+    "claude_total": 0.74,
+    "notes": "10步。第一步猜错(pc_system_info)。完成了list_packages/export_contacts/get_status/list_devices。但没用pc_device_manager_get_info或pc_runtime_env_get_system_info。",
+    "task_name": "设备完整备份准备",
+    "difficulty": "L5",
+    "skills_involved": [
+      "runtime_env",
+      "contacts",
+      "file_manager"
+    ],
+    "automated_score": 0.75,
+    "automated_breakdown": {
+      "called_device_lookup": 0.0,
+      "called_pc_runtime_env_list_packages": 1.0,
+      "called_contacts_lookup": 1.0,
+      "response_contains_4": 1.0
+    },
+    "combined_score": 0.744
+  },
+  {
+    "task_id": "task_69_pcsim_focus_mode",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.9,
+      "response_quality": 1.0,
+      "efficiency": 0.4
+    },
+    "claude_total": 0.855,
+    "notes": "13步。读4个SKILL.md后逐个完成。dnd→brightness→music(用Night Drive替代Workout Mix)→countdown。全部成功。",
+    "task_name": "专注模式全配置",
+    "difficulty": "L5",
+    "skills_involved": [
+      "push_notification",
+      "display",
+      "music_player",
+      "timer"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "called_push_lookup": 1.0,
+      "called_pc_display_set_brightness": 1.0,
+      "called_pc_music_player_play": 1.0,
+      "called_pc_timer_create_countdown": 1.0
+    },
+    "combined_score": 0.913
+  },
+  {
+    "task_id": "task_70_pcsim_delete_nonexistent",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.8
+    },
+    "claude_total": 0.91,
+    "notes": "3步。第一步猜错(contacts_delete)，search+list确认不存在。高效。",
+    "task_name": "删除不存在的联系人",
+    "difficulty": "L6",
+    "skills_involved": [
+      "contacts"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "response_contains_1": 1.0
+    },
+    "combined_score": 0.946
+  },
+  {
+    "task_id": "task_71_pcsim_offline_device",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→list_devices，2步完美。正确识别离线状态并提供建议。",
+    "task_name": "向离线设备传输文件",
+    "difficulty": "L6",
+    "skills_involved": [
+      "file_manager",
+      "bluetooth"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "response_contains_1": 1.0
+    },
+    "combined_score": 1.0
+  },
+  {
+    "task_id": "task_72_pcsim_uninstall_system",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.5
+    },
+    "claude_total": 0.85,
+    "notes": "6步。前3步猜错(app_manager list, finial_app_list, list-tools)。list_installed→uninstall成功识别系统应用。",
+    "task_name": "尝试卸载系统应用",
+    "difficulty": "L6",
+    "skills_involved": [
+      "runtime_env"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "response_contains_1": 1.0
+    },
+    "combined_score": 0.91
+  },
+  {
+    "task_id": "task_73_pcsim_stop_no_recording",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 0.8,
+      "response_quality": 1.0,
+      "efficiency": 0.6
+    },
+    "claude_total": 0.87,
+    "notes": "4步。read后猜错(pc-recorder-stop缺pc-sim前缀)，第3步成功。额外get_status确认。",
+    "task_name": "无录音状态下停止录音",
+    "difficulty": "L6",
+    "skills_involved": [
+      "recorder"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "response_contains_1": 1.0
+    },
+    "combined_score": 0.922
+  },
+  {
+    "task_id": "task_74_pcsim_insufficient_funds",
+    "claude_scores": {
+      "task_completion": 1.0,
+      "tool_usage": 1.0,
+      "response_quality": 1.0,
+      "efficiency": 1.0
+    },
+    "claude_total": 1.0,
+    "notes": "read→get_balance，2步完美。正确识别余额不足。",
+    "task_name": "余额不足时的支付处理",
+    "difficulty": "L6",
+    "skills_involved": [
+      "payment"
+    ],
+    "automated_score": 1.0,
+    "automated_breakdown": {
+      "response_contains_1": 1.0
+    },
+    "combined_score": 1.0
+  }
+]
